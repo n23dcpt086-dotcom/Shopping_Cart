@@ -19,8 +19,7 @@
 ## 2. Quy trình làm việc
 1. **Lab 2**: Xây dựng biểu đồ Use Case để mô tả các chức năng chính và tác nhân.  
 2. **Lab 3**: Thiết kế biểu đồ Sequence để thể hiện luồng hoạt động chi tiết của chức năng Login.  
-3. **Lab 4**: Cài đặt form Login sử dụng HTML, CSS, JS, bao gồm chức năng kiểm tra dữ liệu nhập.  
-4. **Lab 5**: Gom tất cả artifacts lại, viết báo cáo, cập nhật README, tạo version tag `v1.0`.  
+3. **Lab 4**: Cài đặt form Login sử dụng HTML, CSS, JS, bao gồm chức năng kiểm tra dữ liệu nhập. 
 
 ---
 
