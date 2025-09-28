@@ -31,3 +31,21 @@ Trong quá trình thực hiện, nhóm đã xây dựng được các artifacts 
 Công cụ được sử dụng xuyên suốt bao gồm: **Visual Studio Code**, **Git**, **GitHub** và **PlantUML/draw.io**.
 
 ## Cách chạy và kiểm thử
+- Người dùng có thể mở trực tiếp file `form_login.html` bằng trình duyệt để quan sát và thử nghiệm.  
+- Nếu muốn triển khai bản demo online, chỉ cần bật GitHub Pages cho repo, hệ thống sẽ cung cấp một URL để truy cập.
+
+## Quản lý phiên bản với Git
+Trong quá trình phát triển, nhóm thống nhất sử dụng Git để kiểm soát phiên bản. Sau khi hoàn thiện, phiên bản ổn định đầu tiên được gắn thẻ như sau:
+
+```bash
+git add .
+git commit -m "Lab05: hoàn thiện UML, form login và báo cáo"
+git push origin main
+git tag v1.0
+git push origin v1.0
+```
+
+## Tổng kết
+Lab 05 giúp nhóm nắm vững quy trình phát triển phần mềm từ khâu thiết kế, hiện thực hóa, cho đến quản lý mã nguồn. Kết quả cuối cùng là một hệ thống Shopping Cart cơ bản với đầy đủ artifacts UML, giao diện đăng nhập, và báo cáo mô tả toàn bộ tiến trình.  
+
+👉 Repo của nhóm: [Shopping Cart](https://github.com/n23dcpt086-dotcom/Shopping_Cart.git)
