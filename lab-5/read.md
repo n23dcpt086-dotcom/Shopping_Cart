@@ -15,7 +15,7 @@
 
 ---
 
-## . Artifacts đã xây dựng
+## 3. Artifacts đã xây dựng
 
 ### Use Case Diagram
 Mô tả các chức năng chính của hệ thống Shopping Cart.  
