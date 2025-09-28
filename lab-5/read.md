@@ -9,7 +9,9 @@ Mô tả các chức năng chính của hệ thống Shopping Cart.
 ### Sequence Diagram (Checkout)
 Mô tả luồng tương tác khi người dùng thực hiện thanh toán.  
 ![Sequence Diagram 1](../Lab%2003/SQ1.png)  
+
 ![Sequence Diagram 2](../Lab%2003/SQ2.png)  
+
 ![Sequence Diagram 3](../Lab%2003/SQ3.png)
 
 
@@ -20,7 +22,7 @@ Form đăng nhập với các thành phần:
 - Nút: Login, Cancel  
 - Kiểm tra dữ liệu bằng JavaScript  
 
-Source code: (https://github.com/n23dcpt086-dotcom/Shopping_Cart/blob/main/lab-5/artifacts/form_login.html)
+Source code: [Form Login](../Lab%2004/form_login.html)
 
 ---
 
