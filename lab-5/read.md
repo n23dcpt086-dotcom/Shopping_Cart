@@ -23,6 +23,12 @@ Form đăng nhập với các thành phần:
 - Kiểm tra dữ liệu bằng JavaScript  
 
 Xem code tại thư mục [`LAB04`](../LAB04).
+**Hướng dẫn push code:**
+```bash
+# Clone repo
+git clone https://github.com/n23dcpt086-dotcom/Shopping_Cart.git
+cd Shopping_Cart/LAB04
+start LAB04.HTML
 
 ---
 
@@ -40,18 +46,3 @@ Xem code tại thư mục [`LAB04`](../LAB04).
 - **Lê Thị Thanh Bình** – N23DCPT063 – Hiện thực Form Login và tích hợp lên GitHub.  
 
 ---
-
-## 3. Hướng dẫn push & tạo tag version
-```bash
-# Clone repo
-git clone https://github.com/n23dcpt086-dotcom/Shopping_Cart.git
-cd Shopping_Cart
-
-# Commit thay đổi
-git add .
-git commit -m "Add Lab 5 report"
-git push origin main
-
-# Tạo tag version v1.0
-git tag v1.0
-git push origin v1.0
