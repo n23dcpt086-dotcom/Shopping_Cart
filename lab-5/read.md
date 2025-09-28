@@ -22,7 +22,7 @@ Form đăng nhập với các thành phần:
 - Nút: Login, Cancel  
 - Kiểm tra dữ liệu bằng JavaScript  
 
-Source code: [Form Login](../Lab%2004/form_login.html)
+Xem code tại thư mục [`LAB04`](../LAB04).
 
 ---
 
@@ -45,11 +45,15 @@ Source code: [Form Login](../Lab%2004/form_login.html)
 
 ## 3. Hướng dẫn push & tạo tag version
 ```bash
-# Thêm và commit thay đổi
+# Clone repo
+git clone https://github.com/n23dcpt086-dotcom/Shopping_Cart.git
+cd Shopping_Cart
+
+# Commit thay đổi
 git add .
-git commit -m "Add Lab 5 report and artifacts"
+git commit -m "Add Lab 5 report"
 git push origin main
 
-# Tạo tag phiên bản v1.0
+# Tạo tag version v1.0
 git tag v1.0
 git push origin v1.0
