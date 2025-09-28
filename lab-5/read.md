@@ -1,16 +1,9 @@
 # Lab 05 – Tích hợp, quản lý và báo cáo
 
-## Giới thiệu nhóm
-Dự án **Shopping Cart** được thực hiện bởi nhóm sinh viên lớp N23DCPT. Nhóm gồm ba thành viên với vai trò phân chia như sau:  
+## Giới thiệu thành viên nhóm:  
 - **Trần Thị Thuận Kiều** – N23DCPT086 – Trưởng nhóm, điều phối công việc.  
 - **Lê Thị Thanh Bình** – N23DCPT063 – Phát triển giao diện và trải nghiệm người dùng.  
-- **Nguyễn Thị Diệp** – N23DCPT070 – Xây dựng API và quản lý cơ sở dữ liệu.  
-
-Mỗi thành viên đều có trách nhiệm riêng nhưng cùng phối hợp để hoàn thiện sản phẩm.  
-
-## Mục tiêu của bài Lab
-Trong Lab 05, nhiệm vụ chính là hoàn tất quy trình phát triển phần mềm từ giai đoạn thiết kế UML cho đến triển khai một phần chức năng cơ bản bằng HTML/CSS/JS.  
-Ngoài phần lập trình, bài lab còn rèn luyện kỹ năng quản lý dự án bằng Git/GitHub, viết báo cáo, và phát hành sản phẩm với version rõ ràng (**v1.0**).  
+- **Nguyễn Thị Diệp** – N23DCPT070 – Xây dựng API và quản lý cơ sở dữ liệu.    
 
 ## Artifacts đã xây dựng
 Trong quá trình làm việc, nhóm đã tạo ra một số artifacts quan trọng:  
