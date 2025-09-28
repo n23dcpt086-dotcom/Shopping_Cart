@@ -25,12 +25,12 @@ Form đăng nhập với các thành phần:
 Xem code tại thư mục [`LAB04`](../LAB04).
 
 **Hướng dẫn push code:**
-# Clone repo
 ```bash
+# Clone repo
 git clone https://github.com/n23dcpt086-dotcom/Shopping_Cart.git
 cd Shopping_Cart/LAB04
 start LAB04.HTML
-
+```
 ---
 
 ### 2.1 Quy trình làm việc:
