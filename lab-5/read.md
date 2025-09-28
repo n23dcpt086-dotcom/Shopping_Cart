@@ -23,9 +23,10 @@ Form đăng nhập với các thành phần:
 - Kiểm tra dữ liệu bằng JavaScript  
 
 Xem code tại thư mục [`LAB04`](../LAB04).
+
 **Hướng dẫn push code:**
-```bash
 # Clone repo
+```bash
 git clone https://github.com/n23dcpt086-dotcom/Shopping_Cart.git
 cd Shopping_Cart/LAB04
 start LAB04.HTML
