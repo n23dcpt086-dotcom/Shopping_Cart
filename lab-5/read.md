@@ -20,7 +20,7 @@ Form đăng nhập với các thành phần:
 - Nút: Login, Cancel  
 - Kiểm tra dữ liệu bằng JavaScript  
 
-[Source code](https://github.com/n23dcpt086-dotcom/Shopping_Cart/blob/main/lab-5/artifacts/form_login.html)
+Source code: (https://github.com/n23dcpt086-dotcom/Shopping_Cart/blob/main/lab-5/artifacts/form_login.html)
 
 ---
 
@@ -35,9 +35,9 @@ Form đăng nhập với các thành phần:
 6. **Đóng gói & phát hành**: tạo tag v1.0 để đánh dấu phiên bản ổn định.  
 
 ### 2.2 Vai trò thành viên
-- **Trần Thị Thuận Kiều** – N23DCPT086: – Phân tích yêu cầu, thiết kế Use Case Diagram.  
-- **Nguyễn Thị Diệp** – N23DCPT070 –: Thiết kế Sequence Diagram, hỗ trợ kiểm thử form.  
-- **Lê Thị Thanh Bình** – N23DCPT063 –: Hiện thực Form Login và tích hợp lên GitHub.  
+- **Trần Thị Thuận Kiều** – N23DCPT086 – Phân tích yêu cầu, thiết kế Use Case Diagram.  
+- **Nguyễn Thị Diệp** – N23DCPT070 – Thiết kế Sequence Diagram, hỗ trợ kiểm thử form.  
+- **Lê Thị Thanh Bình** – N23DCPT063 – Hiện thực Form Login và tích hợp lên GitHub.  
 
 ---
 
