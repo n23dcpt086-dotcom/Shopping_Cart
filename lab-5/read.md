@@ -1,32 +1,31 @@
+# Lab 5 – Tích hợp, quản lý & báo cáo
 
-## Project Report
+## 1. Artifacts:
+- **Use Case Diagram**  
+  - Nguồn: Lab 2  
+  - Vị trí: [lab-5/diagrams/usecase.png](./diagrams/usecase.png)  
 
-### 1. Quy trình làm việc
-1. **Phân tích yêu cầu**: Xác định chức năng hệ thống.  
-2. **Thiết kế UML**: Use Case & Sequence Diagram.  
-3. **Hiện thực form đăng nhập** bằng HTML/CSS/JS.  
-4. **Kiểm thử**: xác minh dữ liệu nhập, chỉnh sửa form.  
-5. **Quản lý mã nguồn trên GitHub**: commit rõ ràng, push code, update README.  
-6. **Đóng gói & phát hành**: tạo tag v1.0 để đánh dấu phiên bản ổn định.  
+- **Sequence Diagram**  
+  - Nguồn: Lab 3  
+  - Vị trí: [lab-5/diagrams/sequence.png](./diagrams/sequence.png)  
 
-### 2. Vai trò thành viên
-- **Trần Thị Thuận Kiều** – N23DCPT086 – Phân tích yêu cầu, thiết kế Use Case Diagram.  
-- **Nguyễn Thị Diệp** – N23DCPT070 – Thiết kế Sequence Diagram, hỗ trợ kiểm thử form.  
-- **Lê Thị Thanh Bình** – N23DCPT063 – Hiện thực Form Login và tích hợp lên GitHub.  
+- **Form Login Code**  
+  - Nguồn: Lab 4  
+  - Vị trí: [lab-5/form-login/](./form-login/)  
+  - Bao gồm: `index.html`, `style.css`, `script.js`
 
 ---
 
-## 3. Hướng dẫn push & tạo tag version
-```bash
-# Clone repo
-git clone https://github.com/n23dcpt086-dotcom/Shopping_Cart.git
-cd Shopping_Cart
+## 2. Quy trình làm việc
+1. **Lab 2**: Xây dựng biểu đồ Use Case để mô tả các chức năng chính và tác nhân.  
+2. **Lab 3**: Thiết kế biểu đồ Sequence để thể hiện luồng hoạt động chi tiết của chức năng Login.  
+3. **Lab 4**: Cài đặt form Login sử dụng HTML, CSS, JS, bao gồm chức năng kiểm tra dữ liệu nhập.  
+4. **Lab 5**: Gom tất cả artifacts lại, viết báo cáo, cập nhật README, tạo version tag `v1.0`.  
 
-# Commit thay đổi
-git add .
-git commit -m "Add Lab 5 report"
-git push origin main
+---
 
-# Tạo tag version v1.0
-git tag v1.0
-git push origin v1.0
+## . Hướng dẫn chạy form login
+1. Truy cập thư mục: `lab-5/form-login/`  
+2. Mở file **`index.html`** bằng trình duyệt bất kỳ (Chrome, Edge, Firefox).  
+3. Nhập Username/Password và bấm **Login** để kiểm thử.  
+4. Nút **Cancel** sẽ reset dữ liệu trong form.  
