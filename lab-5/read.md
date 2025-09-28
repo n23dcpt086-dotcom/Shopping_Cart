@@ -11,8 +11,8 @@ Hoàn thiện một chu trình phát triển phần mềm cơ bản, thiết k�
 ## Kết quả và sản phẩm
 Trong quá trình thực hiện, nhóm đã xây dựng được các artifacts quan trọng sau:
 
-- **Biểu đồ Use Case**: minh họa các chức năng chính của hệ thống Shopping Cart và cách mà người dùng hoặc quản trị viên tương tác với chúng.  
-  ![Use Case Diagram](lab-5/artifacts/usecase.png)
+- **Biểu đồ Use Case**: minh họa các chức năng chính của hệ thống Shopping Cart và cách mà người dùng hoặc quản trị viên tương tác với chúng.
+  ![Use Case Diagram](https://github.com/n23dcpt086-dotcom/Shopping_Cart/blob/main/lab-5/artifacts/usecase.png?raw=true)
 
 - **Biểu đồ Sequence (Checkout)**: mô tả tuần tự các bước khi khách hàng tiến hành thanh toán, từ thao tác giao diện đến việc xác nhận đơn hàng.  
   ![Sequence Diagram](lab-5/artifacts/sequence_checkout.png)
