@@ -2,6 +2,7 @@ Final Report – Mini Project ATM
 
 
 1. Giới thiệu ATM mini-project
+
 ATM mini-project được thực hiện trong Lab 10 nhằm tích hợp toàn bộ các kết quả từ những Lab trước để tạo thành một hệ thống mô phỏng ATM cơ bản. Hệ thống này giúp sinh viên rèn luyện khả năng phân tích – thiết kế bằng UML, thiết kế cơ sở dữ liệu, lập trình giao diện kết nối DB, kiểm thử phần mềm và quản lý tiến độ bằng Jira.
 
    Các chức năng chính của hệ thống bao gồm:
@@ -16,7 +17,7 @@ ATM mini-project được thực hiện trong Lab 10 nhằm tích hợp toàn b�
    + Quản lý tiến độ dự án với mô hình Scrum thông qua Jira.
   
 
-2. Mô hình UML
+3. Mô hình UML
 Hệ thống được phân tích và thiết kế với các sơ đồ UML sau:
 
 - Use Case Diagram (Lab 02): mô tả các chức năng mà người dùng có thể thực hiện, bao gồm Đăng nhập, Rút tiền, Kiểm tra số dư. Hệ thống có nhiệm vụ xác thực và cập nhật dữ liệu.
