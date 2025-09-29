@@ -1,29 +1,48 @@
+import hashlib
 import pytest
-from atm_module import ATM
+from unittest.mock import MagicMock
+import withdraw_module
 
-@pytest.fixture
-def atm():
-    return ATM(pin="1234", balance=1_000_000)
+CARD = "1234567890123456"
+CORRECT_PIN = "1234"
+CORRECT_PIN_HASH = hashlib.sha256(CORRECT_PIN.encode()).hexdigest()
 
-def test_verify_pin_correct(atm):
-    assert atm.verify_pin("1234") is True
+def make_mock_conn(fetchone_values):
+    mock_cur = MagicMock()
+    mock_cur.fetchone.side_effect = list(fetchone_values)
+    mock_conn = MagicMock()
+    mock_conn.cursor.return_value = mock_cur
+    mock_conn.is_connected.return_value = True
+    return mock_conn
 
-def test_verify_pin_incorrect(atm):
-    assert atm.verify_pin("0000") is False
+def test_verify_pin_correct(monkeypatch):
+    mock_conn = make_mock_conn([(CORRECT_PIN_HASH,)])
+    monkeypatch.setattr(withdraw_module, "get_db_connection", lambda: mock_conn)
+    assert withdraw_module.verify_pin(CARD, CORRECT_PIN) is True
 
-def test_withdraw_success(atm):
-    result = atm.withdraw("1234", 200_000)
-    assert "✅ Rút" in result
-    assert atm.balance == 800_000
+def test_verify_pin_wrong(monkeypatch):
+    mock_conn = make_mock_conn([("otherhash",)])
+    monkeypatch.setattr(withdraw_module, "get_db_connection", lambda: mock_conn)
+    assert withdraw_module.verify_pin(CARD, "9999") is False
 
-def test_withdraw_invalid_pin(atm):
-    result = atm.withdraw("1111", 100_000)
-    assert result == "❌ PIN không hợp lệ"
+def test_withdraw_success(monkeypatch):
+    account_info = (1, 1_000_000)
+    mock_conn = make_mock_conn([account_info])
+    monkeypatch.setattr(withdraw_module, "get_db_connection", lambda: mock_conn)
+    result = withdraw_module.withdraw(CARD, 500_000)
+    assert result is True
+    assert mock_conn.commit.called
 
-def test_withdraw_invalid_amount(atm):
-    result = atm.withdraw("1234", -50)
-    assert result == "❌ Số tiền phải > 0"
+def test_withdraw_insufficient(monkeypatch):
+    account_info = (1, 1000)
+    mock_conn = make_mock_conn([account_info])
+    monkeypatch.setattr(withdraw_module, "get_db_connection", lambda: mock_conn)
+    result = withdraw_module.withdraw(CARD, 2_000_000)
+    assert result is False
+    assert mock_conn.rollback.called
 
-def test_withdraw_insufficient_funds(atm):
-    result = atm.withdraw("1234", 2_000_000)
-    assert "❌ Số dư không đủ" in result
+def test_withdraw_invalid_amount(monkeypatch):
+    mock_conn = make_mock_conn([])
+    monkeypatch.setattr(withdraw_module, "get_db_connection", lambda: mock_conn)
+    result = withdraw_module.withdraw(CARD, 0)
+    assert result is False
