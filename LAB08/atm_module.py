@@ -1,17 +1,15 @@
 class ATM:
-    def __init__(self, pin, balance):
-        self.pin = pin
+    def __init__(self, balance, pin):
         self.balance = balance
+        self.pin = pin
 
     def verify_pin(self, input_pin):
         return self.pin == input_pin
 
-    def withdraw(self, input_pin, amount):
-        if not self.verify_pin(input_pin):
-            return "Invalid PIN"
+    def withdraw(self, amount):
         if amount <= 0:
-            return "Invalid amount"
+            raise ValueError("Số tiền rút phải > 0")
         if amount > self.balance:
-            return "Insufficient funds"
+            raise Exception("Không đủ tiền trong tài khoản")
         self.balance -= amount
-        return "Withdraw successful"
+        return self.balance
