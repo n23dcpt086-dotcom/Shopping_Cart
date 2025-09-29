@@ -45,10 +45,12 @@ def test_login_wrong_password(driver):
     assert "Tên người dùng hoặc Mật khẩu không đúng" in message
 
 def test_login_empty_input(driver):
+    driver.refresh()
+    WebDriverWait(driver,3).until(EC.presence_of_element_located((By.ID, "username")))
     driver.find_element(By.ID, "username").clear()
+    driver.find_element(By.ID, "username").send_keys("admin")
     driver.find_element(By.ID, "password").clear()
-
-    driver.execute_script("document.getElementById('loginForm').submit()")
-
-    message = wait_for_message_text(driver, timeout=3)
+    driver.find_element(By.CSS_SELECTOR, "button.btn-primary").click()
+    time.sleep(0.3)
+    message = wait_for_message_text(driver)
     assert "Vui lòng nhập đầy đủ Tên người dùng và Mật khẩu." in message
