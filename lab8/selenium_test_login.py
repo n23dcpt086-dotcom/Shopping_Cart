@@ -1,41 +1,54 @@
+import time
 import pytest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.common.exceptions import TimeoutException
 
 @pytest.fixture
 def driver():
-    driver = webdriver.Chrome()
+    opts = Options()
+    driver = webdriver.Chrome(options=opts)
     driver.get("file:///C:/Users/ADMIN/Shopping_Cart/LAB04/form_login.html")
+    driver.set_window_size(1200, 900)
     yield driver
     driver.quit()
 
-def get_message(driver):
-    return driver.find_element(By.ID, "message").text
+def wait_for_message_text(driver, timeout=3):
+    wait = WebDriverWait(driver, timeout)
+    try:
+        wait.until(lambda d: d.find_element(By.ID, "message").text.strip() != "")
+    except TimeoutException:
+        pass
+    return driver.find_element(By.ID, "message").text.strip()
 
 def test_login_success(driver):
     driver.find_element(By.ID, "username").clear()
     driver.find_element(By.ID, "password").clear()
+
     driver.find_element(By.ID, "username").send_keys("admin")
     driver.find_element(By.ID, "password").send_keys("admin123")
     driver.find_element(By.CSS_SELECTOR, ".btn.primary").click()
 
-    message = get_message(driver)
+    message = wait_for_message_text(driver, timeout=3)
     assert "Đăng nhập thành công" in message
 
 def test_login_wrong_password(driver):
     driver.find_element(By.ID, "username").clear()
     driver.find_element(By.ID, "password").clear()
-    driver.find_element(By.ID, "username").send_keys("wrong")
-    driver.find_element(By.ID, "password").send_keys("123456")
+    driver.find_element(By.ID, "username").send_keys("wronguser")
+    driver.find_element(By.ID, "password").send_keys("wrong123") 
     driver.find_element(By.CSS_SELECTOR, ".btn.primary").click()
 
-    message = get_message(driver)
-    assert "Tên người dùng hoặc Mật khẩu không đúng." in message
+    message = wait_for_message_text(driver, timeout=3)
+    assert "Tên người dùng hoặc Mật khẩu không đúng" in message
 
 def test_login_empty_input(driver):
     driver.find_element(By.ID, "username").clear()
     driver.find_element(By.ID, "password").clear()
+
     driver.find_element(By.CSS_SELECTOR, ".btn.primary").click()
 
-    message = get_message(driver)
+    message = wait_for_message_text(driver, timeout=3)
     assert "Vui lòng nhập đầy đủ Tên người dùng và Mật khẩu." in message
