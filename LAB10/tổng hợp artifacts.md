@@ -4,11 +4,11 @@ LAB02
 
 LAB03
 
-[SQ1](../Lab 03/SQ1.png)
+[SQ1](../Lab03/SQ1.png)
  
-[SQ2](../Lab 03/SQ2.png)
+[SQ2](../Lab03/SQ2.png)
  
-[SQ3](../Lab 03/SQ3.png)
+[SQ3](../Lab03/SQ3.png)
  
 
 LAB04
@@ -17,9 +17,9 @@ LAB04
 
 LAB06
 
-[Package diagram](../Lab 06/package-diagram.png)
+[Package diagram](../Lab06/package-diagram.png)
  
-[Class atm](../Lab 06/class-atm.png)
+[Class atm](../Lab06/class-atm.png)
  
 
 
