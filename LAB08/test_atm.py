@@ -9,7 +9,7 @@ def test_verify_pin_correct(atm):
     assert atm.verify_pin("1234") is True
 
 def test_verify_pin_incorrect(atm):
-    assert atm.verify_pin("9999") is False
+    assert atm.verify_pin("0000") is False
 
 def test_withdraw_success(atm):
     result = atm.withdraw("1234", 200_000)
@@ -17,11 +17,11 @@ def test_withdraw_success(atm):
     assert atm.balance == 800_000
 
 def test_withdraw_invalid_pin(atm):
-    result = atm.withdraw("0000", 200_000)
+    result = atm.withdraw("1111", 100_000)
     assert result == "❌ PIN không hợp lệ"
 
 def test_withdraw_invalid_amount(atm):
-    result = atm.withdraw("1234", -100)
+    result = atm.withdraw("1234", -50)
     assert result == "❌ Số tiền phải > 0"
 
 def test_withdraw_insufficient_funds(atm):
