@@ -22,7 +22,7 @@ LAB06
 LAB07
 [Withdraw_module](../LAB07/withdraw_module.py)
 
-KẾT QUẢ CHẠY
+[KẾT QUẢ CHẠY](../LAB07/Screenshot2025-09-28233207.png)
  
 
 LAB08
