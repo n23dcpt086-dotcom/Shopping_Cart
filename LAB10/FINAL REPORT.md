@@ -17,7 +17,7 @@ ATM mini-project được thực hiện trong Lab 10 nhằm tích hợp toàn b�
    + Quản lý tiến độ dự án với mô hình Scrum thông qua Jira.
   
 
-3. Mô hình UML
+2. Mô hình UML
 Hệ thống được phân tích và thiết kế với các sơ đồ UML sau:
 
 - Use Case Diagram (Lab 02): mô tả các chức năng mà người dùng có thể thực hiện, bao gồm Đăng nhập, Rút tiền, Kiểm tra số dư. Hệ thống có nhiệm vụ xác thực và cập nhật dữ liệu.
