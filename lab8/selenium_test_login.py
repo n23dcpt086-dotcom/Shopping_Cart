@@ -6,7 +6,7 @@ from selenium.webdriver.common.by import By
 @pytest.fixture(scope="module")
 def driver():
     driver = webdriver.Chrome()
-    driver.get("file:///D:/lab4.html")
+    driver.get("https://github.com/n23dcpt086-dotcom/Shopping_Cart/blob/774838f60e0d835d42833f275208e089a2751c22/LAB04/form_login.html")
     driver.maximize_window()
     yield driver
     driver.quit()
