@@ -1,33 +1,33 @@
 LAB02
-[Use Case Descriptions](lab-2/UseCaseDiagram.jpg)
+[Use Case Descriptions](../lab-2/UseCaseDiagram.jpg)
 
 LAB03
-[SQ1](Lab03/SQ1.png)
+[SQ1](../Lab03/SQ1.png)
  
-[SQ2](Lab03/SQ2.png)
+[SQ2](../Lab03/SQ2.png)
  
-[SQ3](Lab03/SQ3.png)
+[SQ3](../Lab03/SQ3.png)
  
 
 LAB04
-[Form_login](LAB04/form_login.html)
+[Form_login](../LAB04/form_login.html)
 
 LAB06
-[Package diagram:](Lab06/package-diagram.png)
+[Package diagram](../Lab06/package-diagram.png)
  
-[Class atm](Lab06/class-atm.png)
+[Class atm](../Lab06/class-atm.png)
  
 
 
 LAB07
-[Withdraw_module](LAB07/withdraw_module.py)
+[Withdraw_module](../LAB07/withdraw_module.py)
 
 KẾT QUẢ CHẠY
  
 
 LAB08
-[ test_withdraw](lab8/test_withdraw.py)
-[selenium_test_login](lab8/selenium_test_login.py)
+[ test_withdraw](../lab8/test_withdraw.py)
+[selenium_test_login](../lab8/selenium_test_login.py)
 
 
 LAB09
