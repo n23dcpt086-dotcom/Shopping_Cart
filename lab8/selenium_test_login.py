@@ -1,29 +1,16 @@
-import os
-import time
 import pytest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
 
-@pytest.fixture(scope="module")
+@pytest.fixture
 def driver():
-    options = webdriver.ChromeOptions()
-    options.add_argument("--start-maximized")
-
-    if os.getenv("HEADLESS") == "1":
-        options.add_argument("--headless=new")
-
-    service = Service(ChromeDriverManager().install())
-    driver = webdriver.Chrome(service=service, options=options)
-
+    driver = webdriver.Chrome()
     driver.get("file:///C:/Users/ADMIN/Shopping_Cart/LAB04/form_login.html")
     yield driver
     driver.quit()
 
 def get_message(driver):
-    time.sleep(1)  
-    return driver.find_element(By.ID, "message").text.strip()
+    return driver.find_element(By.ID, "message").text
 
 def test_login_success(driver):
     driver.find_element(By.ID, "username").clear()
@@ -43,7 +30,7 @@ def test_login_wrong_password(driver):
     driver.find_element(By.CSS_SELECTOR, ".btn.primary").click()
 
     message = get_message(driver)
-    assert "không đúng" in message
+    assert "Tên người dùng hoặc Mật khẩu không đúng." in message
 
 def test_login_empty_input(driver):
     driver.find_element(By.ID, "username").clear()
@@ -51,4 +38,4 @@ def test_login_empty_input(driver):
     driver.find_element(By.CSS_SELECTOR, ".btn.primary").click()
 
     message = get_message(driver)
-    assert "Vui lòng nhập đầy đủ" in message
+    assert "Vui lòng nhập đầy đủ Tên người dùng và Mật khẩu." in message
