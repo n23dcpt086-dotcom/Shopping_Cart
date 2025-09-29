@@ -4,9 +4,11 @@ class ATM:
         self.balance = balance
 
     def verify_pin(self, input_pin):
+        """Kiểm tra PIN"""
         return self.pin == input_pin
 
     def withdraw(self, input_pin, amount):
+        """Rút tiền"""
         if not self.verify_pin(input_pin):
             return "❌ PIN không hợp lệ"
         if amount <= 0:
