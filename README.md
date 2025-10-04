@@ -2,14 +2,20 @@
 
 # Thành viên nhóm
 
-Họ tên: Trần Thị Thuận Kiều MSSV: N23DCPT086
+- Họ tên: Trần Thị Thuận Kiều 
 
-Thực hiện lab2, lab5, lab8
+MSSV: N23DCPT086
 
-Họ tên: Lê Thị Thanh Bình MSSV: N23DCPT063
+Thực hiện: lab2, lab5, lab8
 
-Thực hiện lab4, lab7, lab10
+- Họ tên: Lê Thị Thanh Bình 
 
-Họ tên: Nguyễn Thị Diệp MSSV: N23DCPT070
+MSSV: N23DCPT063
 
-Thực hiện lab3, lab6, lab9
+Thực hiện: lab4, lab7, lab10
+
+- Họ tên: Nguyễn Thị Diệp 
+
+MSSV: N23DCPT070
+
+Thực hiện: lab3, lab6, lab9
