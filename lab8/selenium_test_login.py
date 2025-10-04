@@ -1,17 +1,14 @@
-# selenium_test_login.py
 import pytest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-# ĐIỀU CHỈNH đường dẫn tới file HTML trên máy bạn nếu cần
 LOGIN_PAGE = "file:///C:/Users/ADMIN/Shopping_Cart/LAB04/form_login.html"
 
 @pytest.fixture
 def driver():
     options = webdriver.ChromeOptions()
-    # options.add_argument("--headless=new")   # bật nếu muốn chạy không mở cửa sổ
     driver = webdriver.Chrome(options=options)
     driver.maximize_window()
     yield driver
