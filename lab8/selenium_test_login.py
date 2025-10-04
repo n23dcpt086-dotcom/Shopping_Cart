@@ -1,62 +1,74 @@
 # selenium_test_login.py
+import pytest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-import time
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
+# ĐIỀU CHỈNH đường dẫn tới file HTML trên máy bạn nếu cần
 LOGIN_PAGE = "file:///C:/Users/ADMIN/Shopping_Cart/LAB04/form_login.html"
 
+@pytest.fixture
+def driver():
+    options = webdriver.ChromeOptions()
+    # options.add_argument("--headless=new")   # bật nếu muốn chạy không mở cửa sổ
+    driver = webdriver.Chrome(options=options)
+    driver.maximize_window()
+    yield driver
+    driver.quit()
 
-def test_login_success():
-    driver = webdriver.Chrome()
+def click_login_button(driver):
+    WebDriverWait(driver, 5).until(
+        EC.element_to_be_clickable((By.CSS_SELECTOR, "button.login-btn"))
+    ).click()
+
+def test_login_success(driver):
     driver.get(LOGIN_PAGE)
+    WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.ID, "username")))
+    driver.find_element(By.ID, "username").clear()
+    driver.find_element(By.ID, "password").clear()
 
-    username = driver.find_element(By.ID, "username")
-    password = driver.find_element(By.ID, "password")
-    login_btn = driver.find_element(By.CLASS_NAME, "login-btn")
+    driver.find_element(By.ID, "username").send_keys("admin123")
+    driver.find_element(By.ID, "password").send_keys("password123")
+    click_login_button(driver)
 
-    username.send_keys("admin123")
-    password.send_keys("password123")
-    login_btn.click()
-
-    time.sleep(1)
+    WebDriverWait(driver, 5).until(EC.alert_is_present())
     alert = driver.switch_to.alert
     assert "Đăng nhập thành công" in alert.text
     alert.accept()
-    driver.quit()
 
-
-def test_login_fail():
-    driver = webdriver.Chrome()
+def test_login_wrong_password(driver):
     driver.get(LOGIN_PAGE)
+    WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.ID, "username")))
+    driver.find_element(By.ID, "username").clear()
+    driver.find_element(By.ID, "password").clear()
 
-    username = driver.find_element(By.ID, "username")
-    password = driver.find_element(By.ID, "password")
-    login_btn = driver.find_element(By.CLASS_NAME, "login-btn")
+    driver.find_element(By.ID, "username").send_keys("wronguser")   # <5 ký tự
+    driver.find_element(By.ID, "password").send_keys("wrong123")    # <8 ký tự
+    click_login_button(driver)
 
-    username.send_keys("abc")  # username < 5 ký tự
-    password.send_keys("123")  # password < 8 ký tự
-    login_btn.click()
+    WebDriverWait(driver, 3).until(
+        lambda d: d.find_element(By.ID, "usernameError").text.strip() != "" or
+                  d.find_element(By.ID, "passwordError").text.strip() != ""
+    )
+    u_err = driver.find_element(By.ID, "usernameError").text.strip()
+    p_err = driver.find_element(By.ID, "passwordError").text.strip()
+    assert u_err != "" and ("ít nhất 5" in u_err or "không được để trống" in u_err)
+    assert p_err != "" and ("ít nhất 8" in p_err or "không được để trống" in p_err)
 
-    time.sleep(1)
-    username_error = driver.find_element(By.ID, "usernameError").text
-    password_error = driver.find_element(By.ID, "passwordError").text
-
-    assert "ít nhất 5 ký tự" in username_error
-    assert "ít nhất 8 ký tự" in password_error
-    driver.quit()
-
-
-def test_login_empty():
-    driver = webdriver.Chrome()
+def test_login_empty_input(driver):
     driver.get(LOGIN_PAGE)
+    WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.ID, "username")))
+    driver.find_element(By.ID, "username").clear()
+    driver.find_element(By.ID, "password").clear()
+driver.execute_script("document.getElementById('username').removeAttribute('required')")
+    driver.execute_script("document.getElementById('password').removeAttribute('required')")
 
-    login_btn = driver.find_element(By.CLASS_NAME, "login-btn")
-    login_btn.click()
+    click_login_button(driver)
 
-    time.sleep(1)
-    username_error = driver.find_element(By.ID, "usernameError").text
-    password_error = driver.find_element(By.ID, "passwordError").text
-
-    assert "không được để trống" in username_error
-    assert "không được để trống" in password_error
-    driver.quit()
+    WebDriverWait(driver, 3).until(
+        lambda d: d.find_element(By.ID, "usernameError").text.strip() != "" and
+                  d.find_element(By.ID, "passwordError").text.strip() != ""
+    )
+    assert "không được để trống" in driver.find_element(By.ID, "usernameError").text
+    assert "không được để trống" in driver.find_element(By.ID, "passwordError").text
