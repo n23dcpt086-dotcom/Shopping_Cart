@@ -1,68 +1,51 @@
 document.getElementById('loginForm').addEventListener('submit', function(event) {
+    // Ngăn chặn việc form được submit theo cách truyền thống
+    event.preventDefault(); 
     
-    event.preventDefault();
-
-    
-    const username = document.getElementById('username').value.trim();
-    const password = document.getElementById('password').value;
-    const rememberMe = document.getElementById('rememberMe').checked;
-    const messageElement = document.getElementById('message');
-
-    // Xóa thông báo cũ
-    messageElement.style.display = 'none';
-    messageElement.classList.remove('success', 'error');
-    messageElement.textContent = '';
-
-
-    // 1. Kiểm tra không được để trống
-    if (username === '' || password === '') {
-        displayMessage('Vui lòng nhập đầy đủ Tên người dùng và Mật khẩu.', 'error');
-        return;
-    }
-
-    // 2. Kiểm tra độ dài Tên người dùng (tối thiểu 4 ký tự)
-    if (username.length < 4) {
-        displayMessage('Tên người dùng phải có ít nhất 4 ký tự.', 'error');
-        return;
-    }
-
-    // 3. Kiểm tra độ dài Mật khẩu (tối thiểu 6 ký tự)
-    if (password.length < 6) {
-        displayMessage('Mật khẩu phải có ít nhất 6 ký tự.', 'error');
-        return;
-    }
-
-    // 4. Kiểm tra Mật khẩu có chứa số và chữ cái
-    const hasLetter = /[a-zA-Z]/.test(password);
-    const hasNumber = /[0-9]/.test(password);
-    if (!hasLetter || !hasNumber) {
-        displayMessage('Mật khẩu phải chứa cả chữ cái và số.', 'error');
-        return;
-    }
-
-    // --- XỬ LÝ ĐĂNG NHẬP THÀNH CÔNG (Mô phỏng) ---
-
-    // đăng nhập thành công
-    if (username === 'admin' && password === 'admin123') {
-        let successMsg = 'Đăng nhập thành công! Chào mừng ' + username + '.';
-        if (rememberMe) {
-            successMsg += ' (Tài khoản đã được ghi nhớ.)';
-        }
-        displayMessage(successMsg, 'success');
-
-        // setTimeout(() => {
-        //     window.location.href = 'dashboard.html';
-        // }, 2000);
-
+    // Thực hiện kiểm tra dữ liệu
+    if (validateForm()) {
+        // Nếu dữ liệu hợp lệ:
+        console.log('Đăng nhập thành công! (Chuyển hướng người dùng...)');
+        alert('Đăng nhập thành công!');
+        // Trong dự án thực tế, bạn sẽ gửi dữ liệu này đến server ở đây.
     } else {
-        displayMessage('Tên người dùng hoặc Mật khẩu không đúng.', 'error');
+        console.log('Lỗi đăng nhập: Dữ liệu nhập không hợp lệ.');
     }
 });
 
-// Hàm hiển thị thông báo
-function displayMessage(text, type) {
-    const messageElement = document.getElementById('message');
-    messageElement.textContent = text;
-    messageElement.classList.add(type); 
-    messageElement.style.display = 'block';
-}
+function validateForm() {
+    const usernameInput = document.getElementById('username');
+    const passwordInput = document.getElementById('password');
+    const usernameError = document.getElementById('usernameError');
+    const passwordError = document.getElementById('passwordError');
+    let isValid = true;
+
+    // Reset lỗi
+    usernameError.textContent = '';
+    passwordError.textContent = '';
+    usernameInput.classList.remove('input-error');
+    passwordInput.classList.remove('input-error');
+
+    // 1. Kiểm tra Username (Tên người dùng)
+    if (usernameInput.value.trim() === '') {
+        usernameError.textContent = 'Tên người dùng không được để trống.';
+        usernameInput.classList.add('input-error');
+        isValid = false;
+    } else if (usernameInput.value.trim().length < 5) {
+        usernameError.textContent = 'Tên người dùng phải có ít nhất 5 ký tự.';
+        usernameInput.classList.add('input-error');
+        isValid = false;
+    }
+
+    // 2. Kiểm tra Password (Mật khẩu)
+    if (passwordInput.value.trim() === '') {
+        passwordError.textContent = 'Mật khẩu không được để trống.';
+        passwordInput.classList.add('input-error');
+        isValid = false;
+    } else if (passwordInput.value.trim().length < 8) {
+        passwordError.textContent = 'Mật khẩu phải có ít nhất 8 ký tự.';
+        passwordInput.classList.add('input-error');
+        isValid = false;
+    }
+    
+    // Bạn có thể thêm các
