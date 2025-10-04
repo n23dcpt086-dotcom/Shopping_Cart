@@ -3,7 +3,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
 
-LOGIN_PAGE = "file:///C:/Users/ADMIN/Shopping_Cart/labs/lab08-testing/login_form.html"
+LOGIN_PAGE = "file:///C:/Users/ADMIN/Shopping_Cart/LAB04/form_login.html"
 
 
 def test_login_success():
