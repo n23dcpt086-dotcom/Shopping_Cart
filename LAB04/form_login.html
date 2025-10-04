@@ -6,10 +6,10 @@
     <title>Lab 04 - Form Đăng Nhập Đẹp</title>
 
     <style>
-        /* Thiết lập cơ bản */
+       
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #a8a8ff, #7367f0); /* Nền Gradient hiện đại */
+            background: linear-gradient(135deg, #a8a8ff, #7367f0); 
             display: flex;
             justify-content: center;
             align-items: center;
@@ -17,12 +17,11 @@
             margin: 0;
         }
 
-        /* Container của Form */
         .login-container {
             background-color: #ffffff;
             padding: 40px;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25); /* Shadow nổi bật */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25); 
             width: 100%;
             max-width: 400px;
             text-align: center;
@@ -68,7 +67,7 @@
         input[type="text"]:focus,
         input[type="password"]:focus {
             border-color: #7367f0;
-            box-shadow: 0 0 0 3px rgba(115, 103, 240, 0.2); /* Hiệu ứng focus đẹp */
+            box-shadow: 0 0 0 3px rgba(115, 103, 240, 0.2); 
             outline: none;
         }
 
@@ -83,7 +82,7 @@
         }
         .remember-me input[type="checkbox"] {
             margin-right: 8px;
-            transform: scale(1.2); /* Checkbox lớn hơn */
+            transform: scale(1.2); 
         }
 
         /* Nút bấm */
@@ -105,7 +104,7 @@
         }
 
         .login-btn {
-            background-color: #7367f0; /* Màu chủ đạo */
+            background-color: #7367f0; 
             color: white;
         }
 
@@ -128,11 +127,11 @@
             color: #e74c3c;
             font-size: 13px;
             margin-top: 5px;
-            min-height: 1.2em; /* Giữ chỗ để layout ổn định */
+            min-height: 1.2em; 
             font-style: italic;
         }
 
-        /* CSS cho input bị lỗi (dùng trong JS) */
+        /* CSS cho input bị lỗi  */
         .input-error {
             border-color: #e74c3c !important;
         }
@@ -180,8 +179,7 @@
                 const rememberMe = document.getElementById('rememberMe').checked;
                 alert(`Đăng nhập thành công! Ghi nhớ tôi: ${rememberMe ? 'Có' : 'Không'}`);
                 
-                // Ở đây là nơi bạn sẽ gửi dữ liệu (Username/Password) đến máy chủ (backend)
-                // Ví dụ: fetch('/api/login', { method: 'POST', body: ... })
+               
             } else {
                 console.log('Lỗi đăng nhập: Dữ liệu nhập không hợp lệ.');
             }
@@ -236,3 +234,4 @@
     </script>
 </body>
 </html>
+
