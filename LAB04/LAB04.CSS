@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #71b7e6, #9b59b6); /* Nền gradient đẹp */
+    background: linear-gradient(135deg, #71b7e6, #9b59b6); 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,7 +12,7 @@ body {
     background-color: #ffffff;
     padding: 30px 40px;
     border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Shadow tinh tế */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); 
     width: 100%;
     max-width: 400px;
     text-align: center;
@@ -42,13 +42,13 @@ input[type="password"] {
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 8px;
-    box-sizing: border-box; /* Quan trọng để padding không làm tăng chiều rộng */
+    box-sizing: border-box; 
     transition: border-color 0.3s;
 }
 
 input[type="text"]:focus,
 input[type="password"]:focus {
-    border-color: #9b59b6; /* Highlight khi focus */
+    border-color: #9b59b6; 
     outline: none;
 }
 
@@ -93,10 +93,10 @@ input[type="password"]:focus {
     color: #e74c3c;
     font-size: 14px;
     margin-top: 5px;
-    height: 1.2em; /* Giữ chỗ để tránh layout bị nhảy */
+    height: 1.2em; 
 }
 
-/* Hiệu ứng cho input bị lỗi */
+
 .input-error {
     border-color: #e74c3c !important;
 }
