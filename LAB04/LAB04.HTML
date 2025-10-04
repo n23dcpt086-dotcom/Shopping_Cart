@@ -3,35 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Đăng Nhập</title>
+    <title>Đăng nhập - Lab 04</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <div class="login-container">
-        <h2>Đăng Nhập</h2>
+        <h2>Đăng Nhập Hệ Thống</h2>
         <form id="loginForm">
             <div class="input-group">
                 <label for="username">Tên người dùng:</label>
                 <input type="text" id="username" name="username" required>
+                <div class="error-message" id="usernameError"></div>
             </div>
 
             <div class="input-group">
                 <label for="password">Mật khẩu:</label>
                 <input type="password" id="password" name="password" required>
+                <div class="error-message" id="passwordError"></div>
             </div>
 
-            <div class="options-group">
+            <div class="remember-me">
                 <input type="checkbox" id="rememberMe" name="rememberMe">
-                <label for="rememberMe">Nhớ tài khoản</label>
+                <label for="rememberMe">Ghi nhớ tôi</label>
             </div>
 
-            <div class="button-group">
-                <button type="submit" class="btn primary">Đăng Nhập</button>
-                <button type="button" class="btn secondary" onclick="document.getElementById('loginForm').reset();">Hủy</button>
-            </div>
+            <button type="submit" class="login-btn">Đăng nhập</button>
 
-            <p id="message" class="message"></p>
+            <button type="button" class="cancel-btn" onclick="document.getElementById('loginForm').reset()">Hủy</button>
         </form>
+        <p class="github-note">Hãy nhớ đưa Source code lên GitHub và chạy Demo!</p>
     </div>
 
     <script src="script.js"></script>
