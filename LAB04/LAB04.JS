@@ -4,10 +4,10 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     
     // Thực hiện kiểm tra dữ liệu
     if (validateForm()) {
-        // Nếu dữ liệu hợp lệ:
+       
         console.log('Đăng nhập thành công! (Chuyển hướng người dùng...)');
         alert('Đăng nhập thành công!');
-        // Trong dự án thực tế, bạn sẽ gửi dữ liệu này đến server ở đây.
+       
     } else {
         console.log('Lỗi đăng nhập: Dữ liệu nhập không hợp lệ.');
     }
@@ -48,4 +48,3 @@ function validateForm() {
         isValid = false;
     }
     
-    // Bạn có thể thêm các
